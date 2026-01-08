@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, Shield } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -28,7 +28,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
-              <span className="text-white font-bold text-lg">TC</span>
+              <Shield className="w-5 h-5 text-primary-foreground" />
             </div>
             <span className="font-display font-bold text-xl text-foreground">TeCuidApp</span>
           </Link>
@@ -62,7 +62,7 @@ const Navbar = () => {
               <Globe className="w-4 h-4" />
               {language === 'es' ? 'EN' : 'ES'}
             </Button>
-            <Button variant="gradient" size="sm">
+            <Button variant="gradient" size="sm" disabled>
               {t.nav.download}
             </Button>
           </div>
@@ -105,7 +105,7 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            <Button variant="gradient" size="sm" className="mt-4 w-full">
+            <Button variant="gradient" size="sm" className="mt-4 w-full" disabled>
               {t.nav.download}
             </Button>
           </div>
