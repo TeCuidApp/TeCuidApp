@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Heart, Mail, MapPin } from 'lucide-react';
+import { Heart, Mail, MapPin, Shield, Instagram } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
               <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center">
-                <span className="text-white font-bold text-lg">TC</span>
+                <Shield className="w-5 h-5 text-primary-foreground" />
               </div>
               <span className="font-display font-bold text-xl text-foreground">TeCuidApp</span>
             </Link>
@@ -60,9 +60,25 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-4">{t.footer.contact}</h4>
             <ul className="space-y-3">
-              <li className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Mail className="w-4 h-4 text-primary" />
-                contacto@tecuidapp.com
+              <li>
+                <a 
+                  href="mailto:contacto@tecuidapp.com"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Mail className="w-4 h-4 text-primary" />
+                  contacto@tecuidapp.com
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://instagram.com/tecuidapp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                >
+                  <Instagram className="w-4 h-4 text-primary" />
+                  @tecuidapp
+                </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <MapPin className="w-4 h-4 text-primary" />
@@ -79,7 +95,7 @@ const Footer = () => {
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1">
             {t.footer.madeWith.replace('❤️', '')}
-            <Heart className="w-4 h-4 text-accent fill-accent" />
+            <Heart className="w-4 h-4 text-primary fill-primary" />
             Colombia
           </p>
         </div>
